@@ -11,7 +11,7 @@ class App extends Component {
         super();
 
         // Have to do this to use this in class methods
-        this.addFish = this.addFish.bind(this);
+        //this.addFish = this.addFish.bind(this);
         this.removeFish = this.removeFish.bind(this);
         this.updateFish = this.updateFish.bind(this);
         this.loadSamples = this.loadSamples.bind(this);
@@ -55,7 +55,10 @@ class App extends Component {
         base.removeBinding(this.ref);
     }
 
-    addFish(fish) {
+    // Technique from lesson 29 to get around
+    // having to bind to this in constructor
+    // Property Initializer
+    addFish = (fish) => {
         // update our state
         // make a copy of existing fishes state
         const fishes = {...this.state.fishes};
