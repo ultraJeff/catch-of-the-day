@@ -2,7 +2,7 @@
   "name": "catch-of-the-day",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://ultraJeff.github.io/catch-of-the-day",
+  "homepage": "https://ultraJeff.github.io/catch-of-the-day",
   "devDependencies": {
     "autoprefixer-stylus": "0.10.0",
     "babel-eslint": "^7.1.1",

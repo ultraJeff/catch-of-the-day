@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Match, Miss } from 'react-router';
+import { BrowserRouter, Match, Miss, Route } from 'react-router';
 
 import './css/style.css';
 
@@ -12,10 +12,10 @@ import NotFound from './components/NotFound';
 const Root = () => {
     return (
         //Router needs to passed all the way down to children components
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <div>
-                <Match exactly pattern={process.env.PUBLIC_URL + '/'} component={StorePicker} />
-                <Match pattern={`${process.env.PUBLIC_URL}/store/:storeId`} component={App} />
+                <Match exactly pattern="/" component={StorePicker} />
+                <Match pattern="/store/:storeId" component={App} />
                 <Miss component={NotFound} />
             </div>
         </BrowserRouter>
